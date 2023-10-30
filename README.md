@@ -52,4 +52,44 @@ void Level(int inputLevel)
   }
 }
 ```
-3. 
+
+3. Track the current state and implement the game logic by using boolean variables
+```c++
+void loop()
+{  
+  delay(100);
+
+  if (!isStarted && !canInput)
+  {
+    BeforeStart();
+  }
+  
+  if (digitalRead(START_BUTTON) == HIGH)
+  {
+    Serial.println("Start Button pushed!");
+  	GameStart();
+  }
+
+  // ... (중략) ...
+
+  //게임 진행
+  if (canInput && nowInput < level)
+  {
+    InputButton();
+  }
+  
+  //채점 진행
+  if (canInput && nowInput == level)
+  {
+    Grade();
+  }
+  
+  //10단계 달성 시 게임 종료
+  if (isStarted == true || level > maxLevel)
+  {
+    PlayerWin();
+  }
+}
+```
+
+You can see the demo video at
