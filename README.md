@@ -92,7 +92,7 @@ void loop()
 }
 ```
 
-You can see the demo video at
+You can see the demo video at https://www.youtube.com/watch?v=RxV2xgW3EFQ
 
 - - - 
 Dev environment: Arduino Nano, Arduino IDE 2.2.1
