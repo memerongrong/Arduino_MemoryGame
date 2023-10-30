@@ -75,7 +75,7 @@ void loop()
   }
   
   //10단계 달성 시 게임 종료
-  if (isStarted == true || level > maxLevel)
+  if (isStarted == true && level > maxLevel)
   {
     PlayerWin();
   }
@@ -102,6 +102,7 @@ void GameStart()
   analogWrite(LED_GREEN, 0);
   
   Serial.println("Game Start!!");
+
   isStarted = true;
   nowInput = 0;
   tone(BUZZER, melody[3], 100); delay(500);
