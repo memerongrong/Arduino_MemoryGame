@@ -176,8 +176,10 @@ void Grade() {
     Serial.print("Level: ");
     Serial.print(level);
     Serial.println(", FAIL");
+    digitalWrite(LED_RED, HIGH);
     tone(BUZZER, melody[0], 100); delay(200);
     tone(BUZZER, melody[0], 300); delay(700);
+    digitalWrite(LED_RED, LOW);
     isStarted = false;
     level = 0;
   } 
@@ -187,9 +189,11 @@ void Grade() {
       Serial.print("Level: ");
       Serial.print(level);
       Serial.println(", PASS");
+      digitalWrite(LED_BLUE, HIGH);
       tone(BUZZER, melody[3], 200); delay(300);
       tone(BUZZER, melody[5], 200); delay(300);
       tone(BUZZER, melody[6], 300); delay(500);
+      digitalWrite(LED_BLUE, LOW);
       nowInput = 0;
       isStarted = false;
     }
